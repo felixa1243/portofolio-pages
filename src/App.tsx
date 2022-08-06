@@ -1,11 +1,17 @@
+import {useEffect,useState} from 'react'
 import useFetch from './utils/useFetch';
+import Hero from './components/Hero'
+import Navbar from './components/Navbar'
+import Animated from './components/Animated'
 export default function App() {
-  const {data,loading,error}=useFetch('https://api.themoviedb.org/3/trending/tv/week?api_key=d98d9ec83d01ed0457725059cf6f58ef&page=1');
+  const [title,setTitle]=useState('home')
+  useEffect(()=>{
+    document.title='Iqbal net'+'-'+title
+  },[document.title])
 	return (
 		<>
-	  {
-		  data?.results?.map(movie=>movie.name)
-	  }
+                <Navbar/>
+                <Hero/>
 		</>
   )
 }
