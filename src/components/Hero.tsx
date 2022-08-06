@@ -3,21 +3,20 @@ import {
   Heading,
   Container,
   Text,
+  HStack,
   Button,
   Stack,
   Icon,
   useColorModeValue,
   createIcon,
-  chakra,
-  Link
+  Center
 } from '@chakra-ui/react';
-import ExternalLink from './ExternalLink.tsx'
+import ExternalLink from './ExternalLink'
 import {
 AiOutlineGithub,
 AiFillLinkedin,
 AiFillMail
 } from 'react-icons/ai'
-
 
 export default function Hero() {
   return (
@@ -46,7 +45,7 @@ export default function Hero() {
           <Stack
             direction={'row'}
             spacing={3}
-            align={'left'}
+            align={'center'}
             alignSelf={'flex-start'}
             position={'relative'}>
             <Button
@@ -59,9 +58,16 @@ export default function Hero() {
               }}>
               Hire me
             </Button>
-            <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
+            <ExternalLink
+            icon={
+            <Button variant={'link'} colorScheme={'blue'} size={'sm'}
+            >
               Download cv
             </Button>
+            }
+            href={'/cv.pdf'}
+            />
+
             <Box>
               <Icon
                 as={Arrow}
@@ -71,9 +77,9 @@ export default function Hero() {
                 right={-71}
                 top={'10px'}
               />
-              <Text
+              
+              <Text href={'/cv.png'}
                 fontSize={'lg'}
-                fontFamily={'Caveat'}
                 position={'absolute'}
                 right={'-125px'}
                 top={'-15px'}
@@ -81,11 +87,6 @@ export default function Hero() {
                 Download the cv
               </Text>
             </Box>
-          </Stack>
-          <Stack >
-          <ExternalLink 
-          icon={<AiOutlineGithub/>}
-          href={'https://github.com/felixa1243'}/>
           </Stack>
           </Stack>
       </Container>

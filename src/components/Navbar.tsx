@@ -14,9 +14,11 @@ import {
   useColorModeValue,
   Stack,
   useColorMode,
+  Heading,
   Center,
 } from '@chakra-ui/react';
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+
+import { AddIcon,MoonIcon, SunIcon } from '@chakra-ui/icons';
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
     px={2}
@@ -42,9 +44,21 @@ export default function Nav() {
       px={4} 
       position={'sticky'}
       top={0}
+      backdropFilter="auto"
+      backdropBlur={'8px'}
+      zIndex={5}
       >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box justifySelf={'center'}>Iqbal Network</Box>
+          <Heading 
+          size={'sm'}
+          position={'relative'}
+          >
+          Iqbal Network &nbsp; 
+          <AddIcon 
+          boxSize={'7px'}
+          position={'absolute'}
+          />
+          </Heading>
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
@@ -61,7 +75,7 @@ export default function Nav() {
                   minW={0}>
                   <Avatar
                     size={'sm'}
-                    src={'https://avatars.dicebear.com/api/male/username.svg'}
+                    src={'/avatar.png'}
                   />
                 </MenuButton>
                 <MenuList alignItems={'center'}>
@@ -69,18 +83,22 @@ export default function Nav() {
                   <Center>
                     <Avatar
                       size={'2xl'}
-                      src={'https://www.google.com/search?q=pgr+lucia&client=ms-android-vivo-rvo2&prmd=inmv&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjbyq3a6LH5AhWc0HMBHdwbASIQ_AUoAXoECAIQAQ&biw=360&bih=633&dpr=2#imgrc=aJZk0hY4K7YwyM'}
+                      src={'/avatar.png'}
                     />
                   </Center>
                   <br />
                   <Center>
-                    <p>Username</p>
+                    <p>Rajiph iqbal</p>
                   </Center>
+                  
+
                   <br />
                   <MenuDivider />
-                  <MenuItem>Your Servers</MenuItem>
-                  <MenuItem>Account Settings</MenuItem>
-                  <MenuItem>Logout</MenuItem>
+                  <MenuItem>Profile</MenuItem>
+                  <MenuItem>My skill</MenuItem>
+                  <MenuItem>Contact</MenuItem>
+                  <MenuItem onClick={toggleColorMode
+                  }>Theme {colorMode==='light'?'Dark':'Light'}</MenuItem>
                 </MenuList>
               </Menu>
             </Stack>
