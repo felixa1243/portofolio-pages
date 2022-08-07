@@ -17,7 +17,7 @@ import {
   Heading,
   Center,
 } from '@chakra-ui/react';
-
+import ExternalLink from './ExternalLink'
 import { AddIcon,MoonIcon, SunIcon } from '@chakra-ui/icons';
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -49,7 +49,10 @@ export default function Nav() {
       zIndex={5}
       >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Heading 
+      <ExternalLink
+      href={'http://localhost:5173'}
+      icon={
+        <Heading 
           size={'sm'}
           position={'relative'}
           >
@@ -59,14 +62,16 @@ export default function Nav() {
           position={'absolute'}
           />
           </Heading>
-
+}      
+          external={false}
+/>
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
               <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               </Button>
 
-              <Menu>
+              <Menu isLazy>
                 <MenuButton
                   as={Button}
                   rounded={'full'}

@@ -1,23 +1,30 @@
 import {
   Flex,
-  Heading,
   Text
 } from '@chakra-ui/react'
-export default function SkillCard(props){
+
+type Props={
+  title:string;
+  icon:React.ReactChild;
+  description:string;
+}
+export default function SkillCard(props:Props){
   return (
-    <Flex 
-    justify={'center'}
-    direction={'column'}
-    align={'center'}
-    width={'400px'}
-    >
-    <Heading size={'lg'}>
+     <Flex 
+     direction={'column'} 
+     align={'center'}
+     justify={'center'}
+     width={['150px','250px']}
+     >
+      <Text fontWeight={700}>
       {props.title}
-    </Heading>
-     {props.icon}
-     <Text align={'left'}>
-     {props.description}
-     </Text>
-    </Flex>
+      </Text>
+      
+      {props.icon}
+      
+      <Text fontWeight={400}>
+      {props.description}
+      </Text>
+     </Flex>
     )
 }

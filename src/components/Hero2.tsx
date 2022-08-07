@@ -24,14 +24,22 @@ AiFillLinkedin,
 AiFillMail
 } from 'react-icons/ai'
 
+import {
+  ArrowDownIcon
+} from '@chakra-ui/icons'
 export default function Hero2() {
   return (
-    <Container maxW={'7xl'}>
+    <Container
+    maxW={'7xl'}
+    position={'relative'}
+    overflow={'hidden'}
+    >
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}
         py={{ base: 20, md: 28 }}
-        direction={{ base: 'column', md: 'row' }}>
+        direction={{ base: 'column', md: 'row' }}
+        >
         <Stack flex={1} spacing={{ base: 5, md: 10 }}>
           <Heading
             lineHeight={1.1}
@@ -45,12 +53,11 @@ export default function Hero2() {
                 width: 'full',
                 height: '30%',
                 position: 'absolute',
-                bottom: 0,
+                bottom: -1,
                 left: 0,
                 bg: 'blue.200',
                 zIndex: -1,
-                transform:'auto',
-                skewX:'25deg'
+                skewX:'15deg'
               }}>
               Hello i'm
             </Text>
@@ -71,10 +78,13 @@ export default function Hero2() {
           
                <ExternalLink
            icon={<PrimaryButton fill={'Hire me!'} />}
-           href={'https://www.google.com'}
+           href={'https://wa.me/6285927778963'}
            />
            <ExternalLink
-           icon={<SecondaryButton fill={'Download cv'} />}
+           icon={<SecondaryButton 
+           icon={<ArrowDownIcon
+              h={4} w={4} color={'blue.300'} />} 
+           fill={'Download cv'} />}
            href={'/cv.pdf'}
            />
           </Stack>
@@ -84,8 +94,29 @@ export default function Hero2() {
           href={'https://github.com/felixa1243'}/>
             <ExternalLink 
           icon={<AiFillLinkedin size={'18px'}/>}
-          href={'https://github.com/felixa1243'}/>
+          href={'https://github.com/felixa1243'}
+          />
           </HStack>
+          <Image
+          alt={'blob'}
+          position={'absolute'}
+          align={'center'}
+          w={['150px','220px']}
+          src={'/blob-left-bottom.png'}
+          right={'-3.5rem'}
+          top={['-3rem','-15%']}
+          
+          />
+          <Image
+          alt={'blob-2'}
+          align={'center'}
+          w={['150px','220px']}
+          src={'/blob-right-top.png'}
+          position={'absolute'}
+          left={['-5rem','-9rem']}
+          bottom={['44%','9%']}
+          zIndex={-1}
+          />
         </Stack>
         <Flex
           flex={1}

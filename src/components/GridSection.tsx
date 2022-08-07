@@ -1,8 +1,13 @@
-import {FC} from 'react'
-
+import {
+  SimpleGrid,
+  Box,
+  Container,
+  Flex
+} from '@chakra-ui/react'
+/*
 type Skillset={
   title:string,
-  icon:React.FC,
+  icon:React.ReactNode,
   description:string
 }
 const skillList:Skillset[]=[
@@ -33,4 +38,14 @@ const GridSection=props=>{
                 />}
                 description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur natus in vitae illum fugiat dolores corrupti quia, minus eius voluptatum cupiditate corporis magni, repudiandae assumenda? Vitae quaerat distinctio suscipit mollitia?'}
                 />
+}*/
+
+export default function GridSection({children}){
+  return (
+    <Container maxW={'100%'} centerContent>
+      <SimpleGrid columns={[2,3]} py={5} spacing='16px'>
+        {children}
+       </SimpleGrid>
+     </Container>
+    )
 }

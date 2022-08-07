@@ -2,10 +2,11 @@ import {
   Button
 } from '@chakra-ui/react'
 
-import {
-  ArrowDownIcon
-} from '@chakra-ui/icons'
-export default function SecondaryButton(props){
+type Props={
+  title:string,
+  icon?:React.ReactChild
+}
+export default function SecondaryButton(props:Props){
   return (
             <Button
               rounded={'full'}
@@ -15,8 +16,7 @@ export default function SecondaryButton(props){
               px={6}
               colorScheme={'blue'}
               bg={'blue.50'}
-             leftIcon={<ArrowDownIcon
-              h={4} w={4} color={'blue.300'} />}>
+             leftIcon={props.icon&&props.icon}>
               {props.fill}
             </Button>
             )
