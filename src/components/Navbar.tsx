@@ -63,7 +63,7 @@ export default function Nav() {
           />
           </Heading>
 }      
-          external={false}
+          isExternal={false}
 />
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>

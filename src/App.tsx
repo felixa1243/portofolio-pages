@@ -11,7 +11,7 @@ import GridSection from './components/GridSection'
 import {
   AiFillHtml5
 } from 'react-icons/ai'
-
+import InternalLink from './components/InternalLink'
 export default function App() {
   const [title,setTitle]=useState('home')
   useEffect(()=>{
@@ -76,7 +76,7 @@ export default function App() {
                   description={'Test'}
                   />
                 </GridSection>
-                 
+                
              
 		</>
   )

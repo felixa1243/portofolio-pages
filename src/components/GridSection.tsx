@@ -39,13 +39,16 @@ const GridSection=props=>{
                 description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur natus in vitae illum fugiat dolores corrupti quia, minus eius voluptatum cupiditate corporis magni, repudiandae assumenda? Vitae quaerat distinctio suscipit mollitia?'}
                 />
 }*/
-
-export default function GridSection({children}){
+type Child={
+children:React.ReactNode
+}
+const GridSection:React.FunctionComponent<Child> = (children)=>{
   return (
     <Container maxW={'100%'} centerContent>
-      <SimpleGrid columns={[2,3]} py={5} spacing='16px'>
-        {children}
+        <SimpleGrid columns={[2,3]} py={5} spacing='16px'>
+        {children.children} 
        </SimpleGrid>
      </Container>
     )
 }
+export default GridSection

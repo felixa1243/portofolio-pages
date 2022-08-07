@@ -3,11 +3,13 @@ import {
 } from '@chakra-ui/react'
 type Props={
   link:string,
-  children:React.ReactChild
+  children:React.ReactNode
 }
-export default function InternalLink({...Props},{...rest}){
+const InternalLink:React.FunctionComponent<Props> =(props)=>{
   return (
-    <LinkOverlay>
+    <LinkOverlay href={props.link}>
+    {props.children}
     </LinkOverlay>
     )
 }
+export default InternalLink

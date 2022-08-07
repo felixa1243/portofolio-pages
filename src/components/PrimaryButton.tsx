@@ -1,7 +1,10 @@
 import {
   Button
 } from '@chakra-ui/react'
-export default function PrimaryButton(props) {
+type Props={
+  fill:string
+}
+const PrimaryButton:React.FunctionComponent<Props> =(props)=>{
   return (
             <Button
               rounded={'full'}
@@ -15,3 +18,4 @@ export default function PrimaryButton(props) {
             </Button>
             )
 }
+export default PrimaryButton

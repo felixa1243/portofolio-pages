@@ -86,6 +86,7 @@ export default function Hero2() {
               h={4} w={4} color={'blue.300'} />} 
            fill={'Download cv'} />}
            href={'/cv.pdf'}
+
            />
           </Stack>
             <HStack>
@@ -144,7 +145,6 @@ export default function Hero2() {
             <Image
               alt={'Hero Image'}
               fit={'cover'}
-              position={'top center'}
               align={'center'}
               w={'100%'}
               h={'100%'}

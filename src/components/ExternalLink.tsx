@@ -1,8 +1,8 @@
 import { Link } from "@chakra-ui/react";
 type Props={
-   icon:React.ReactChild;
+   icon:React.ReactNode;
    href:string;
-   isExternal?:bool;
+   isExternal?:boolean;
 }
 const ExternalLink = (props:Props) => (
   <Link
@@ -12,7 +12,7 @@ const ExternalLink = (props:Props) => (
     color="brand.black"
     my={5}
     href={props.href}
-    isExternal={false}
+    isExternal={!props.isExternal?true:props.isExternal}
   >
     {props.icon}
   </Link>
