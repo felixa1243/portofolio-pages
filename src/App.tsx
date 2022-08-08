@@ -4,23 +4,39 @@ import Navbar from './components/Navbar'
 import { 
   Icon,
   Heading,
-  Center
+  Center,
+  Flex,
+  Text
 } from '@chakra-ui/react'
 import SkillCard from './components/SkillCard'
 import GridSection from './components/GridSection'
+import Footer from './components/Footer'
 import {
   AiFillHtml5
 } from 'react-icons/ai'
-import InternalLink from './components/InternalLink'
 export default function App() {
   const [title,setTitle]=useState('home')
   useEffect(()=>{
   document.title='Iqbal net'+'-'+title
   },[document.title])
 	return (
-		<>
+		<Flex 
+                minH={'100vh'}
+                grow={1}
+                direction={'column'}
+                >
                 <Navbar/>
                   <Hero2/>
+                  <Center width={'100%'}>
+                  <Heading>
+                    Profile
+                  </Heading>
+                  </Center>
+                  <GridSection>
+                    <Text>
+                    Name: Rajiph iqbal ghandi
+                    </Text>
+                  </GridSection>
                 <Center width={'100%'}>
                   <Heading> My skill </Heading>
                 </Center>
@@ -76,8 +92,7 @@ export default function App() {
                   description={'Test'}
                   />
                 </GridSection>
-                
-             
-		</>
+                <Footer/>
+		</Flex>
   )
 }
