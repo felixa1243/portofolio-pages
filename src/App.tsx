@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react'
 import SkillCard from './components/SkillCard'
 import GridSection from './components/GridSection'
+import Footer from './components/Footer'
 import Card from './components/Card'
 import MotionProvider from './components/MotionProvider'
 import {
@@ -96,7 +97,8 @@ export default function App() {
                   />
        })
        }
-        </GridSection> 
+        </GridSection>
+        <Footer/>
   </div>
   )
 }
