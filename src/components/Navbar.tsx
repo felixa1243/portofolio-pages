@@ -19,20 +19,6 @@ import {
 } from '@chakra-ui/react';
 import ExternalLink from './ExternalLink'
 import { AddIcon,MoonIcon, SunIcon } from '@chakra-ui/icons';
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
-    }}
-    href={'#'}
-    >
-    {children}
-  </Link>
-);
 
 export default function Nav() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -49,7 +35,7 @@ export default function Nav() {
       zIndex={5}
       >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-      <ExternalLink
+<ExternalLink
       href={'http://localhost:5173'}
       icon={
         <Heading 

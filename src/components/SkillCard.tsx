@@ -1,11 +1,12 @@
 import {
   Flex,
-  Text
+  Text,
+  HStack
 } from '@chakra-ui/react'
 
 type Props={
   title:string;
-  icon:React.ReactChild;
+  icon:React.ReactNode;
   description:string;
 }
 export default function SkillCard(props:Props){
@@ -19,12 +20,12 @@ export default function SkillCard(props:Props){
       <Text fontWeight={700}>
       {props.title}
       </Text>
-      
+      <HStack>
       {props.icon}
-      
-      <Text fontWeight={400}>
-      {props.description}
-      </Text>
+        <Text fontWeight={400}>
+           {props.description}
+        </Text>
+      </HStack>
      </Flex>
     )
 }
