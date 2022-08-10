@@ -1,9 +1,9 @@
 import {
   SimpleGrid,
-  Box,
   Container,
-  Flex
+  ContainerProps
 } from '@chakra-ui/react'
+import { forwardRef } from "react"
 /*
 type Skillset={
   title:string,
@@ -39,16 +39,21 @@ const GridSection=props=>{
                 description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur natus in vitae illum fugiat dolores corrupti quia, minus eius voluptatum cupiditate corporis magni, repudiandae assumenda? Vitae quaerat distinctio suscipit mollitia?'}
                 />
 }*/
-type Child={
-children:React.ReactNode
+interface Child extends ContainerProps{
+  children:React.ReactNode
 }
-const GridSection:React.FunctionComponent<Child> = (children)=>{
+
+const GridSection:React.FunctionComponent<Child> = ({children,...props}) => {
   return (
-    <Container maxW={'100%'} centerContent>
+     <Container 
+     maxW={'100%'} 
+     centerContent
+     {...props}
+     >
         <SimpleGrid columns={[2,3]} py={5} spacing='16px'>
-        {children.children} 
+        {children} 
        </SimpleGrid>
-     </Container>
+     </Container> 
     )
 }
 export default GridSection
