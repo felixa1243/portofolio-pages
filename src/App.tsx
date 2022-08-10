@@ -8,12 +8,12 @@ import {
   Text,
   Spinner,
   Container,
+  Flex
 } from '@chakra-ui/react'
 import SkillCard from './components/SkillCard'
 import GridSection from './components/GridSection'
 import Footer from './components/Footer'
-import Card from './components/Card'
-import MotionProvider from './components/MotionProvider'
+import ProfileSection from './components/ProfileSection'
 import {
   AiFillHtml5
 } from 'react-icons/ai'
@@ -61,23 +61,14 @@ export default function App() {
       Please wait...
     </Text>
   </Container>)
-	return (
-		<div>
- <Navbar/>
-   <Hero2/>
-     <Center width={'100%'}>
-        <Heading>
-          Profile
-        </Heading>
-     </Center>
-      <MotionProvider
-        initial={{x:'-100%'}}
-        animate={{x:0}}
-        transition={{
-          duration:1.5
-        }}>
-               Text 
-      </MotionProvider>
+
+  return (
+  <Flex 
+  direction={'column'}
+  minH={'100vh'}>
+   <Navbar/>
+     <Hero2/>
+     <ProfileSection href={'/avatar.png'}/>
        <Center width={'100%'}>
                   <Heading> My skill </Heading>
        </Center>
@@ -99,6 +90,6 @@ export default function App() {
        }
         </GridSection>
         <Footer/>
-  </div>
+  </Flex>
   )
 }
